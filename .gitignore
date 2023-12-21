@@ -1,0 +1,13 @@
+*_venv/
+
+.ipynb_checkpoints/
+
+.env
+
+test
+
+*.json
+
+*.ipynb
+
+*.json
