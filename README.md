@@ -46,6 +46,25 @@ curl --location 'http://127.0.0.1:5000/process_urls?url-to-check=https%3A%2F%2Fw
 
 ```
 
+### Learnings
+
+1. promptTemplate
+    
+    ```python
+    prompt = PromptTemplate(
+                input_variables=["product"],
+                template="What is a good company name that makes {product}?",
+            )
+    
+    prompt.format(product="Smart Apps using Large Language Models (LLMs)")
+    ```
+    easier, faster and cleaner way to reuse prompt and just change variables
+
+2. Importance of Text splitting, creating embeddings
+
+3. Benefits of semantic search which uses word embedding
+    1. store in a vector database for efficient and faster retrieval
+
 ## ❤️ Credits
 
 - [Python](https://www.python.org/)
