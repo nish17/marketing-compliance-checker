@@ -11,3 +11,5 @@ test
 *.ipynb
 
 *.json
+
+__pycache__/

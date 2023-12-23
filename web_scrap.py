@@ -1,6 +1,4 @@
 import dotenv
-import pprint
-
 from langchain.document_loaders import AsyncChromiumLoader, AsyncHtmlLoader
 from langchain.document_transformers import BeautifulSoupTransformer, Html2TextTransformer
 from langchain.chat_models import ChatOpenAI
@@ -107,26 +105,15 @@ def get_marketing_strings(extracted_content):
 
     model = OpenAI(temperature=0)
     output = model(_input.to_string())
-    # print("List of Marketing Content strings:", output)
     return output
 
 def get_final_result(rules, strings):
     prompt = PromptTemplate(
-        template="Assume you are an marketing compliance expert. Please check if the following strings \n\n ```{strings}```\n\n Are complaint enough with thee following policy\n\n```{rules}```\n\n In the final output please only give the final result of strings which are non-compliant with the reason stated from the policy",
+        template="Assume you are an marketing compliance expert. Please check if the following strings \n\n ```{strings}```\n\n Are complaint enough with thee following policy\n\n```{rules}```\n\n In the final output please only give the final result of strings which are non-compliant with the policy in a json format",
         input_variables=["rules", "strings"]
     )
     
     _input = prompt.format(rules=rules, strings=strings)
     model = OpenAI(temperature=0)
     output = model(_input)
-    # print("List of Marketing Content strings:", output)
     return output
-
-# urls = ["https://www.joinguava.com/"]
-
-# extracted_content = scrape_with_playwright(urls, schema=schema)
-
-
-
-
-
