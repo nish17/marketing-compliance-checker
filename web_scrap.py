@@ -1,6 +1,6 @@
 import dotenv
-from langchain.document_loaders import AsyncChromiumLoader, AsyncHtmlLoader
-from langchain.document_transformers import BeautifulSoupTransformer, Html2TextTransformer
+from langchain.document_loaders import AsyncChromiumLoader
+from langchain.document_transformers import BeautifulSoupTransformer
 from langchain.chat_models import ChatOpenAI
 from langchain.llms import OpenAI
 from langchain.prompts import (

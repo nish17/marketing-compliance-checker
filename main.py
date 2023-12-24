@@ -8,14 +8,6 @@ from dotenv import load_dotenv
 import copyreg, ssl
 
 load_dotenv()
-file_path = "faiss_store_openai.pkl"
-
-def save_sslcontext(obj):
-    return obj.__class__, (obj.protocol,)
-
-copyreg.pickle(ssl.SSLContext, save_sslcontext)
-context = ssl.create_default_context()
-
 
 def fetch_page(urls):
     print("Fetching using URL Loader:", urls)
@@ -35,7 +27,6 @@ def create_embeddings_and_store(chunks):
     return db
 
         
-
 
 def process_compliance_url(url):
     print("Fetching the compliance page")
