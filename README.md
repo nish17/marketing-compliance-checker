@@ -31,7 +31,7 @@ $ python api.py
 # * Running on http://127.0.0.1:5000 
 ```
 
-### Architecture
+## Architecture
 
 <img width="718" alt="image" src="https://github.com/nish17/marketing-compliance-checker/assets/12984120/3e0570e3-a4db-40db-a7fb-6771f3b6db6e">
 
@@ -43,13 +43,20 @@ There are 2 query params
 
 ### Example cURL request
 
+
+```sh
+
+curl --location 'http://127.0.0.1:5000/process_urls?url-to-check=&compliance-policy='
+
+```
+
 ```sh
 
 curl --location 'http://127.0.0.1:5000/process_urls?url-to-check=https%3A%2F%2Fwww.joinguava.com%2F&compliance-policy=https%3A%2F%2Fstripe.com%2Fdocs%2Ftreasury%2Fmarketing-treasury'
 
 ```
 
-### Learnings
+## Learnings
 
 1. promptTemplate
     
@@ -67,6 +74,17 @@ curl --location 'http://127.0.0.1:5000/process_urls?url-to-check=https%3A%2F%2Fw
 
 3. Benefits of semantic search which uses word embedding
     1. store in a vector database for efficient and faster retrieval
+
+4. 
+
+## Future scope
+
+- Better Error handling in case things go wrong.
+- Currently requests take about 20-25 seconds to respond. Need to optimize the process a bit and make it faster.
+- To improve the accuracy of this application, we need to integrate some thing called [Self-querying retriever](https://python.langchain.com/docs/integrations/retrievers/self_query/). I didn't get much time to explore. But I feel this could significantly improve the accuracy of this application.
+- Add a frontend interface for making it easier to interact with it.
+- Check if using web scraping for both links could improve the accuracy.
+
 
 ## ❤️ Credits
 
