@@ -33,6 +33,9 @@ $ python api.py
 
 ### Architecture
 
+<img width="718" alt="image" src="https://github.com/nish17/marketing-compliance-checker/assets/12984120/3e0570e3-a4db-40db-a7fb-6771f3b6db6e">
+
+
 There are 2 query params
 
 1. url-to-check
